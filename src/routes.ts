@@ -16,7 +16,7 @@ export default async function routes(fastify: FastifyInstance, options: FastifyP
     return new UsersController().createUser(request, reply);
   });
 
-  fastify.post("api/user/login", (request: FastifyRequest, reply: FastifyReply) => {
+  fastify.post("/api/user/login", (request: FastifyRequest, reply: FastifyReply) => {
     return new UsersController().login(request, reply);
   });
 
