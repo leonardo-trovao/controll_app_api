@@ -11,6 +11,16 @@ class UsersController {
 
     reply.send(response);
   }
+
+  async login(request: FastifyRequest, reply: FastifyReply) {
+    const usersService = new UsersService();
+
+    const data = request.body;
+
+    const response = await usersService.login(data);
+
+    reply.send(response);
+  }
 }
 
 export { UsersController };
